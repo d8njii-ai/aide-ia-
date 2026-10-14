@@ -1,0 +1,8 @@
+{
+  "appId": "com.apaise.app",
+  "appName": "Apaise",
+  "webDir": "www",
+  "plugins": {
+    "CapacitorHttp": { "enabled": true }
+  }
+}

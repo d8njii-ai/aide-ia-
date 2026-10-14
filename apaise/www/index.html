@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1f2a44">
+<title>Apaise</title>
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="brand"><span class="dot"></span> Apaise</div>
+  <div class="actions">
+    <button id="btn-sos" class="sos" aria-label="Urgence">SOS</button>
+    <button id="btn-settings" aria-label="Réglages">⚙️</button>
+  </div>
+</header>
+
+<main id="chat" aria-live="polite"></main>
+
+<form id="form" autocomplete="off">
+  <textarea id="input" rows="1" placeholder="Écris ce que tu ressens…" enterkeyhint="send"></textarea>
+  <button id="send" type="submit" aria-label="Envoyer">➤</button>
+</form>
+
+<!-- Écran d'accueil / avertissement -->
+<dialog id="dlg-welcome">
+  <h2>Bienvenue 🌿</h2>
+  <p>Ici, tu peux déposer ce que tu as sur le cœur, sans jugement, à toute heure.</p>
+  <p class="small">Apaise est une IA : elle peut écouter, réconforter et proposer des pistes, mais elle ne remplace pas un psychologue, un médecin ou tes proches. En cas de danger ou d'idées suicidaires, appelle le <b>3114</b> (gratuit, 24h/24) ou le <b>112</b>.</p>
+  <button id="welcome-ok" class="primary">J'ai compris, commencer</button>
+</dialog>
+
+<!-- SOS -->
+<dialog id="dlg-sos">
+  <h2>Besoin d'aide maintenant ?</h2>
+  <p>Tu n'as pas à traverser ça seul(e). Ces services sont gratuits :</p>
+  <ul class="sos-list">
+    <li><a href="tel:3114"><b>3114</b> — Prévention du suicide, 24h/24, 7j/7</a></li>
+    <li><a href="tel:112"><b>112</b> — Urgence (Europe)</a></li>
+    <li><a href="tel:15"><b>15</b> — SAMU</a></li>
+    <li><a href="tel:119"><b>119</b> — Enfance en danger</a></li>
+    <li><a href="tel:3919"><b>3919</b> — Violences faites aux femmes</a></li>
+    <li><a href="tel:0800235236"><b>0 800 235 236</b> — Fil Santé Jeunes</a></li>
+  </ul>
+  <p class="small">Numéros valables en France. Ailleurs, cherche « ligne d'écoute prévention suicide » + ton pays.</p>
+  <button class="close">Fermer</button>
+</dialog>
+
+<!-- Réglages -->
+<dialog id="dlg-settings">
+  <h2>Réglages</h2>
+  <label>Clé API Anthropic
+    <input id="apikey" type="password" placeholder="sk-ant-…" autocomplete="off">
+  </label>
+  <p class="small">La clé reste uniquement sur ton téléphone. Crée-en une sur console.anthropic.com.</p>
+  <label>Ton prénom (facultatif)
+    <input id="username" type="text" placeholder="Pour que je puisse t'appeler par ton prénom">
+  </label>
+  <div class="row">
+    <button id="save-settings" class="primary">Enregistrer</button>
+    <button id="clear-chat" class="danger">Effacer la conversation</button>
+  </div>
+  <button class="close">Fermer</button>
+</dialog>
+
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+{
+  "name": "Apaise",
+  "short_name": "Apaise",
+  "lang": "fr",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#141b2d",
+  "theme_color": "#1f2a44",
+  "icons": [
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}
